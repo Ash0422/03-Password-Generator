@@ -76,7 +76,7 @@ function generatePassword() {
       generatePassword();
     }
   } else {
-    alert("Please select a Password beetween 4 and 128 characters.");
+    alert("Please select a Password beetween 8 and 128 characters.");
     generatePassword();
   }
 }
