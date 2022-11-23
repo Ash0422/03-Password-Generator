@@ -17,8 +17,8 @@ function generatePassword() {
   // Ask the user how many characters he wants in his password
   const passwordLength = prompt("How many characters do you want in your password?");
 
-  // choose a number between 4 and 150
-  if (passwordLength >= 4 && passwordLength <= 150) {
+  // choose a number between 8 and 128
+  if (passwordLength >= 8 && passwordLength <= 128) {
     // The user will be asked if he wants: lowercase, uppercase, numbers, special characters in his password
     const NumberConfirm = confirm("Do you want Numbers in your Password?");
     const LowerCasesConfirm = confirm("Do you want Lower Cases in your Password?");
@@ -35,7 +35,7 @@ function generatePassword() {
 
       // Rnadomly generate password: random Lower Cases, Upper Cases, Numbers, and Special Characters
       for (let i = 0; passwd.length < passwordLength; i++) {
-        let randomsType = Math.floor(Math.random() * 9);
+        let randomsType = Math.floor(Math.random() * 4);
 
         if (randomsType === 0 && LowerCasesConfirm) {
           console.log(`randomsType: ${randomsType} = lowercases`);
@@ -67,7 +67,7 @@ function generatePassword() {
         }
       }
 
-      // if the user dont select a choice or select a password less than 4 and more than 150 
+      // if the user dont select a choice or select a password less than 8 and more than 128
       console.log(`passwd: ${passwd}`);
       console.log(`passwd length: ${passwd.length}`);
       return passwd;
